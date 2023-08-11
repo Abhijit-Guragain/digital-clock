@@ -14,24 +14,49 @@ const DigitalClock = () => {
     setIsDarkTheme((prevTheme) => !prevTheme);
   };
 
-  const hours = currentTime.getHours();
-  const minutes = currentTime.getMinutes();
-  const seconds = currentTime.getSeconds();
   const themeClass = isDarkTheme ? "dark" : "light";
   const themeText = isDarkTheme ? "Light" : "Dark";
+
+  const options = {
+    hour12: true,
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    timeZoneName: "long",
+  };
+
+  const formatter = new Intl.DateTimeFormat(undefined, options);
+  const formattedTime = formatter.formatToParts(currentTime);
+
+  let timeString = "";
+  let timeZone = "";
+
+  for (const part of formattedTime) {
+    if (part.type === "hour") {
+      timeString += part.value;
+    } else if (part.type === "literal") {
+      timeString += part.value;
+    } else if (part.type === "minute") {
+      timeString += part.value;
+    } else if (part.type === "second") {
+      timeString += part.value;
+    } else if (part.type === "dayPeriod") {
+      timeString += part.value;
+    } else if (part.type === "timeZoneName") {
+      timeZone = part.value.slice(0, -5);
+    }
+  }
 
   return (
     <div className={`digital-clock ${themeClass}`}>
       <span className="heading">Current Time: </span>
       <span className="time">
-        {hours < 10 ? "0" : ""}
-        {hours}:{minutes < 10 ? "0" : ""}
-        {minutes}:{seconds < 10 ? "0" : ""}
-        {seconds}
+        {timeString} {timeZone}
       </span>
       <button className="theme-toggle-button" onClick={toggleTheme}>
         {themeText} Theme
       </button>
+      <div className="by-ag">-by A.G.</div>
     </div>
   );
 };
