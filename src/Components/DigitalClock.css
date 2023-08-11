@@ -13,7 +13,7 @@
   font-weight: bolder;
 }
 .time {
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bolder;
 }
 .light {
@@ -29,6 +29,10 @@
 .digital-clock h1 {
   font-size: 4rem;
   margin: 0;
+}
+
+.timezone {
+  text-align: center;
 }
 
 .theme-toggle-button {
@@ -53,6 +57,6 @@
     font-size: 40px;
   }
   .time {
-    font-size: 30px;
+    font-size: 25px;
   }
 }

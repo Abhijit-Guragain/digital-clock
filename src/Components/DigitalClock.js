@@ -51,7 +51,8 @@ const DigitalClock = () => {
     <div className={`digital-clock ${themeClass}`}>
       <span className="heading">Current Time: </span>
       <span className="time">
-        {timeString} {timeZone}
+        {timeString}
+        <div className="timezone">{timeZone}</div>
       </span>
       <button className="theme-toggle-button" onClick={toggleTheme}>
         {themeText} Theme
