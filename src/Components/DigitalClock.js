@@ -42,8 +42,6 @@ const DigitalClock = () => {
       timeString += part.value;
     } else if (part.type === "dayPeriod") {
       timeString += part.value;
-    } else if (part.type === "timeZoneName") {
-      timeZone = part.value.slice(0, -5);
     }
   }
 
