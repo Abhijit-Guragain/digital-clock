@@ -22,13 +22,13 @@ const DigitalClock = () => {
 
   return (
     <div className={`digital-clock ${themeClass}`}>
-      <h1>Current Time: </h1>
-      <h1>
+      <span className="heading">Current Time: </span>
+      <span className="time">
         {hours < 10 ? "0" : ""}
         {hours}:{minutes < 10 ? "0" : ""}
         {minutes}:{seconds < 10 ? "0" : ""}
         {seconds}
-      </h1>
+      </span>
       <button className="theme-toggle-button" onClick={toggleTheme}>
         {themeText} Theme
       </button>

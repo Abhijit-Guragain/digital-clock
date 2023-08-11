@@ -7,7 +7,14 @@
   font-family: Arial, sans-serif;
   transition: background-color 0.3s, color 0.3s;
 }
-
+.heading {
+  font-size: 60px;
+  font-weight: bolder;
+}
+.time {
+  font-size: 70px;
+  font-weight: bolder;
+}
 .light {
   background-color: white;
   color: black;
@@ -31,4 +38,13 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 420px) {
+  .heading {
+    font-size: 40px;
+  }
+  .time {
+    font-size: 40px;
+  }
 }
